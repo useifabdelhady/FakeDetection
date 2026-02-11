@@ -1,3 +1,6 @@
 /Models/FakeNewsDistilBERT_Quantized
 /Models/FakeNewsDistilBO
 /Data
+/Models/BertResults
+/Models/brand_cache.pkl
+.env

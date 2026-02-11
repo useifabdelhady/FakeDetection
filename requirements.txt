@@ -1,0 +1,30 @@
+# Data Manipulation & Math
+pandas
+numpy
+
+# Machine Learning & Optimization
+scikit-learn
+xgboost
+shap
+optuna
+
+# Feature Extraction & Web Scraping
+requests
+beautifulsoup4
+tldextract
+python-whois
+dnspython
+jellyfish
+rapidfuzz
+pyarrow
+
+# Visualization
+matplotlib
+seaborn
+
+# Development & Integration
+fastapi
+uvicorn
+redis
+joblib
+tqdm
