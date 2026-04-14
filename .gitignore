@@ -4,3 +4,8 @@
 /Models/BertResults
 /Models/brand_cache.pkl
 .env
+.gitignore
+/project
+/GradProject
+/New Text Document.txt 
+/Final System Analysis (Updated).pdf

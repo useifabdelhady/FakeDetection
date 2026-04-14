@@ -28,3 +28,11 @@ uvicorn
 redis
 joblib
 tqdm
+python-dotenv
+datasets
+retrying
+transformers
+torch
+accelerate
+sentencepiece
+wandb
