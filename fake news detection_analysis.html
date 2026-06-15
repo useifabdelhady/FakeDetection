@@ -1,0 +1,672 @@
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      transition: opacity ease-in 0.2s;
+    }
+
+    body[unresolved] {
+      opacity: 0;
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+
+  <meta charset="utf-8">
+  <noscript>
+    <style>
+      #container {
+        display: none;
+      }
+    </style>
+  </noscript>
+  <title> Fake news results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/Style.css">
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%230A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>'>
+
+
+  <link rel="preload"
+    href="/_runtimes/sites-runtime.deb5379cf3c3f7969c325df9a28521d56ffa7650e3d8dee645e5dedcc4acc092.js" as="script"
+    crossorigin="">
+  <link rel="preload" href="/_components/v2/45626c7acdacb631b0e60b6e140e8b169e742d30.js" as="script" crossorigin="">
+  <link rel="preload" href="/_json/adaab389-172f-440e-a6b0-934f08f5058a/_index.json" as="fetch">
+  <style id="reset-css">
+    @layer figreset, figoverridable, reset, theme, base, figutils, components, utilities;
+
+    @layer figoverridable {
+      :root {
+        font-synthesis: none
+      }
+    }
+
+    @layer figutils {
+      :root {
+        --banner-height: 48px;
+        --banner-height-v2: 40px;
+        --full-height-with-banner: calc(100dvh - var(--banner-height))
+      }
+
+      @media (max-width:600px) {
+        .banner-v2-container {
+          left: 0 !important;
+          right: 0 !important;
+          margin: 0 auto !important
+        }
+      }
+
+      .wrapper-with-banner .min-h-screen {
+        min-height: var(--full-height-with-banner)
+      }
+
+      .wrapper-with-banner .h-screen {
+        height: var(--full-height-with-banner)
+      }
+    }
+  </style>
+  <style id="font-faces-0"></style>
+  <style id="body-background-color">
+    body:has([data-breakpoint-id="node-0_4"]) {
+      background-color: #fff
+    }
+  </style>
+  <style id="ssr-css">
+    #container .css-myl2ny {
+      position: relative;
+      flex-shrink: 0;
+      flex: 1 0 0;
+      display: block;
+    }
+
+    #container .css-exq74d {
+      min-width: 1px;
+      min-height: 1px;
+      width: 100%;
+      height: 100dvh;
+    }
+
+    #container .css-j9f0op {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script>window.__serverRenderedCSSClassNames = { "css-myl2ny": "{\"position\":\"relative\",\"flexShrink\":0,\"flex\":\"1 0 0\",\"display\":\"block\"}", "css-exq74d": "{\"minWidth\":1,\"minHeight\":1,\"width\":\"100%\",\"height\":\"100dvh\"}", "css-j9f0op": "{\"width\":\"100%\",\"height\":\"100%\"}" }</script>
+  <meta id="meta-yemfwo" name="description"
+    content="Detect fake news and identify scam websites with an intuitive platform that offers user accounts, analytics, and real-time risk assessments.">
+  <meta id="meta-onfgjs" name="title" content="UIUX">
+  <meta id="meta-yw3oin" name="robots" content="noindex">
+  <meta id="meta-1ab1uk" name="twitter:card" content="summary_large_image">
+  <meta id="meta-fnr44y" name="twitter:url" content="https://menus-object-87729965.figma.site/">
+  <meta id="meta-vhjz5" name="twitter:title" content="UIUX">
+  <meta id="meta-9ce97l" name="twitter:description"
+    content="Detect fake news and identify scam websites with an intuitive platform that offers user accounts, analytics, and real-time risk assessments.">
+  <meta id="meta-oxqyue" property="og:title" content="UIUX">
+  <meta id="meta-b9zme2" property="og:description"
+    content="Detect fake news and identify scam websites with an intuitive platform that offers user accounts, analytics, and real-time risk assessments.">
+  <meta id="meta-zfz6ci" property="og:type" content="website">
+  <meta id="meta-oncyjb" property="og:url" content="https://menus-object-87729965.figma.site/">
+  <meta id="meta-6ruru9" property="og:site_name" content="UIUX">
+  <title id="title-z1nv59">UIUX</title>
+  <link rel="stylesheet" href="/_components/v2/45626c7acdacb631b0e60b6e140e8b169e742d30.css">
+</head>
+
+<body>
+  <header id="navbar" class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a class="flex items-center space-x-2" href="TruthLens.html" data-discover="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-shield h-8 w-8 text-[#0A2540]">
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+            </path>
+          </svg><span class="text-xl font-bold text-[#0A2540]">TruthLens</span></a>
+
+        <nav class=" md:flex items-center space-x-8">
+          <a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="services.html"
+            data-discover="true">Services</a><a
+            class="flex items-center space-x-1 text-[#0A2540] hover:text-[#0A2540]/80 transition-colors"
+            href="dashboard.html" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-layout-dashboard h-4 w-4">
+              <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+              <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+              <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+              <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+            </svg><span>Dashboard</span></a><a
+            class="flex items-center space-x-1 text-[#0A2540] hover:text-[#0A2540]/80 transition-colors"
+            href="profile.html" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-user h-4 w-4">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg><span>Profile</span></a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <span id="helloUser" class="text-sm text-gray-600 hidden md:block">Hello</span>
+          <button id="signOutBtn"
+            class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-[#0A2540] text-white hover:bg-[#0A2540]/90 transition-colors"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-log-out h-4 w-4">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" x2="9" y1="12" y2="12"></line>
+            </svg><span>Sign Out</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script data-template-id="country-code">window.__cf_country = "EG"</script>
+  <script type="module">
+    import { SitesRuntime } from '/_runtimes/sites-runtime.deb5379cf3c3f7969c325df9a28521d56ffa7650e3d8dee645e5dedcc4acc092.js';
+    const sitesRuntime = new SitesRuntime({
+      container: document.getElementById('container'),
+      env: 'published',
+      bundleId: 'adaab389-172f-440e-a6b0-934f08f5058a',
+
+      loadComponentsOverNetwork: true,
+      assetsVersion: 'v11',
+      fontsVersion: 'v1',
+      videosVersion: 'v1',
+      codeComponentsVersion: 'v2',
+      withBaseStyles: false,
+      reportingDomain: "https://www.figma.com",
+      bundleCreationDate: '2025-12-22 18:31:00 UTC',
+      isFigmake: true,
+      enableMetaTags: true,
+    });
+  </script>
+
+  <div id="container">
+    <div class="">
+      <div class="">
+        <div class="tailwind css-myl2ny css-10v5rb">
+          <div class="min-h-screen bg-[#F5F7FA]">
+            <header id="guestHeader" class="bg-white shadow-sm border-b border-gray-200">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                  <a class="flex items-center space-x-2" href="Truthlens.html" data-discover="true"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-shield h-8 w-8 text-[#0A2540]">
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                      </path>
+                    </svg><span class="text-xl font-bold text-[#0A2540]">TruthLens</span></a>
+                  <nav class="hidden md:flex items-center space-x-8"><a
+                      class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="services.html"
+                      data-discover="true">Services</a></nav>
+                  <div class="flex items-center space-x-4">
+                    <a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="sign_in.html"
+                      data-discover="true">Sign In</a><a
+                      class="px-4 py-2 rounded-lg bg-[#0A2540] text-white hover:bg-[#0A2540]/90 transition-colors"
+                      href="sign_up.html" data-discover="true">Sign Up</a>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div class="min-h-screen bg-[#F5F7FA] py-12">
+              <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><button
+                  class="flex items-center space-x-2 text-[#0A2540] hover:text-[#0A2540]/80 mb-6"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-arrow-left h-5 w-5">
+                    <path d="m12 19-7-7 7-7"></path>
+                    <path d="M19 12H5"></path>
+                  </svg><a href="fake news detection.html">Back to Analysis</a></button>
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                  <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-[#0A2540] mb-2">Credibility Analysis Complete</h2>
+                    <p class="text-gray-600">AI-powered verification results</p>
+                  </div>
+
+
+
+
+
+
+
+
+                  <div class="flex flex-col items-center mb-8">
+                    <div class="relative w-48 h-48 mb-6">
+                      <svg class="transform -rotate-90" width="192" height="192">
+                        <circle cx="96" cy="96" r="70" stroke="#E5E7EB" stroke-width="12" fill="none">
+
+                        </circle>
+                        <circle id="progressCircle" cx="96" cy="96" r="70" stroke="#2ECC71" stroke-width="12"
+                          fill="none" stroke-dasharray="439.822971502571" stroke-dashoffset="87.9645943005142"
+                          stroke-linecap="round" class="transition-all duration-1000 ease-out"></circle>
+                      </svg>
+                      <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <span id="scoreNumber" class="text-5xl font-bold text-[#0A2540]">80%</span><span
+                          class="text-sm text-gray-600 mt-2">Credibility Score</span>
+                      </div>
+                    </div>
+
+
+
+
+                    <div
+                      class="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#2ECC71]/10 text-[#2ECC71]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big h-6 w-6">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg><span class="font-bold text-lg">Likely Real News</span></div>
+                    <div class="mt-4 text-center">
+                      <p class="text-sm text-gray-600">This content shows strong indicators of authenticity and
+                        credibility.</p>
+                    </div>
+                  </div>
+                  <div class="mb-8 p-4 bg-[#F5F7FA] rounded-lg">
+                    <div class="flex items-start space-x-2 mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-file-text h-5 w-5 text-gray-600 mt-0.5">
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                        <path d="M10 9H8"></path>
+                        <path d="M16 13H8"></path>
+                        <path d="M16 17H8"></path>
+                      </svg><span class="font-medium text-[#0A2540]">Analyzed Content:</span></div>
+                    <p id="analyzedContent" class="text-gray-600 text-sm pl-7 line-clamp-3"></p>
+                  </div>
+                  <div class="mb-8">
+                    <div class="flex items-center space-x-2 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-alert h-6 w-6 text-[#2ECC71]">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" x2="12" y1="8" y2="12"></line>
+                        <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                      </svg>
+                      <h3 class="text-xl font-bold text-[#0A2540]">Why This Content is Classified as Real</h3>
+                    </div>
+                    <div class="space-y-3">
+                      <div class="flex items-start space-x-3 p-4 bg-[#F5F7FA] rounded-lg">
+                        <div
+                          class="mt-1 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-[#2ECC71]/20">
+                          <span class="text-sm font-bold text-[#2ECC71]">1</span></div><span
+                          class="text-gray-700">Consistent with verified sources</span>
+                      </div>
+                      <div class="flex items-start space-x-3 p-4 bg-[#F5F7FA] rounded-lg">
+                        <div
+                          class="mt-1 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-[#2ECC71]/20">
+                          <span class="text-sm font-bold text-[#2ECC71]">2</span></div><span
+                          class="text-gray-700">Professional journalistic language</span>
+                      </div>
+                      <div class="flex items-start space-x-3 p-4 bg-[#F5F7FA] rounded-lg">
+                        <div
+                          class="mt-1 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-[#2ECC71]/20">
+                          <span class="text-sm font-bold text-[#2ECC71]">3</span></div><span
+                          class="text-gray-700">Balanced perspective presented</span>
+                      </div>
+                      <div class="flex items-start space-x-3 p-4 bg-[#F5F7FA] rounded-lg">
+                        <div
+                          class="mt-1 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-[#2ECC71]/20">
+                          <span class="text-sm font-bold text-[#2ECC71]">4</span></div><span
+                          class="text-gray-700">Factual information corroborated</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-8 p-4 bg-[#2ECC71]/10 border-l-4 border-[#2ECC71] rounded">
+                    <div class="flex items-start space-x-3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big h-6 w-6 text-[#2ECC71] flex-shrink-0 mt-0.5">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg>
+                      <div>
+                        <h4 class="font-bold text-[#2ECC71] mb-1">Credibility Confirmed</h4>
+                        <p class="text-sm text-gray-700">This content appears to meet journalistic standards and
+                          credibility indicators. However, always practice critical thinking when consuming news.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border-t border-gray-200 pt-6">
+                    <p class="text-center text-gray-600 mb-4">Was this analysis accurate?</p>
+                    <div class="flex justify-center space-x-4"><button id="btnAccurate"
+                        class="flex items-center space-x-2 px-6 py-3 rounded-lg transition-all bg-gray-100 text-gray-700 hover:bg-gray-200"><svg
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-thumbs-up h-5 w-5">
+                          <path d="M7 10v12"></path>
+                          <path
+                            d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z">
+                          </path>
+                        </svg><span>Accurate</span></button><button id="btnNotAccurate"
+                        class="flex items-center space-x-2 px-6 py-3 rounded-lg transition-all bg-gray-100 text-gray-700 hover:bg-gray-200"><svg
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-thumbs-down h-5 w-5">
+                          <path d="M17 14V2"></path>
+                          <path
+                            d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z">
+                          </path>
+                        </svg><span>Not Accurate</span></button></div>
+                  <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                    <a class="flex-1 py-3 bg-[#0A2540] text-white text-center rounded-lg hover:bg-[#0A2540]/90 transition-colors font-medium" href="fake news detection.html" data-discover="true">Analyze Another Article</a>
+                    <a class="flex-1 py-3 border border-[#0A2540] text-[#0A2540] text-center rounded-lg hover:bg-[#0A2540]/5 transition-colors font-medium" href="dashboard.html" data-discover="true">View Dashboard</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <noscript data-nosnippet="">
+    <main
+      style="height: 100vh; width: 100vw; background-color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+      <h1 style="font-size: 24px; padding: 8px; color: black">
+        This site requires JavaScript
+      </h1>
+      <p style="font-size: 16px; padding: 8px; color: #00000080">To view this website, enable JavaScript in your browser
+        settings and reload the page.</p>
+      <form style="margin-top: 12px;" action="">
+        <button type="submit"
+          style="font-size: 14px; color: black; border: 1px solid #0000001a; border-radius: 5px; width: 256px; height: 32px;">
+          Reload page
+        </button>
+      </form>
+    </main>
+  </noscript>
+
+
+  <span id="recharts_measurement_span" aria-hidden="true"
+    style="position: absolute; top: -20000px; left: 0px; padding: 0px; margin: 0px; border: none; white-space: pre; font-size: 16px; letter-spacing: normal;">20</span>
+
+  <script>
+    // ─── Read real analysis result ───────────────────────────
+    const resultJSON = localStorage.getItem('newsAnalysisResult');
+    const savedNewsContent = localStorage.getItem('newsContent');
+    let result = null;
+    let score = 50;
+    let color = '#F1C40F'; // default yellow
+
+    if (resultJSON) {
+      try { result = JSON.parse(resultJSON); } catch (e) { }
+    }
+
+    // ─── Normalize verdict once (backend sends analysisResult, ML sends verdict) ───
+    let verdict = "Inconclusive";
+    if (result) {
+      verdict = result.analysisResult ?? result.AnalysisResult ?? result.verdict ?? "Inconclusive";
+      // Map backend values to display values
+      if (verdict === "Real") verdict = "Verified";
+
+      score = Math.round(result.credibilityScore ?? result.CredibilityScore ?? result.credibility_score ?? 50);
+      if (verdict === 'Verified') color = '#2ECC71';
+      else if (verdict === 'Fake') color = '#E74C3C';
+      else color = '#F1C40F';
+    } else {
+      score = Math.floor(Math.random() * 36) + 60;
+      color = '#2ECC71';
+    }
+
+    // ─── Animate the circle ─────────────────────────────────
+    const radius = 70;
+    const circumference = 2 * Math.PI * radius;
+    const progressCircle = document.getElementById('progressCircle');
+    const offset = circumference - (score / 100) * circumference;
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+    progressCircle.style.stroke = color;
+    progressCircle.style.filter = `drop-shadow(0 0 10px ${color})`;
+
+    setTimeout(() => {
+      progressCircle.style.strokeDashoffset = offset;
+    }, 100);
+
+    // ─── Animate score number ───────────────────────────────
+    const scoreNumber = document.getElementById('scoreNumber');
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function animateScore(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentScore = Math.floor(easeOutQuart * score);
+      scoreNumber.textContent = currentScore + '%';
+      if (progress < 1) {
+        requestAnimationFrame(animateScore);
+      } else {
+        scoreNumber.textContent = score + '%';
+      }
+    }
+    requestAnimationFrame(animateScore);
+
+    // ─── Update verdict badge ───────────────────────────────
+    const verdictBadge = document.querySelector('.inline-flex.items-center.space-x-2.px-6.py-3.rounded-full');
+    const verdictText = verdictBadge ? verdictBadge.querySelector('span') : null;
+
+    if (result && verdictBadge && verdictText) {
+      if (verdict === "Verified") {
+        verdictBadge.className = 'inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#2ECC71]/10 text-[#2ECC71]';
+        verdictText.textContent = 'Likely Real News';
+      } else if (verdict === "Fake") {
+        verdictBadge.className = 'inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#E74C3C]/10 text-[#E74C3C]';
+        verdictText.textContent = 'Likely Fake News';
+      } else {
+        verdictBadge.className = 'inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#F1C40F]/10 text-[#F1C40F]';
+        verdictText.textContent = 'Inconclusive';
+      }
+    }
+
+    // ─── Update subtitle text ───────────────────────────────
+    const subtitleEl = document.querySelector('.mt-4.text-center p');
+    if (subtitleEl && result) {
+      if (verdict === 'Verified') {
+        subtitleEl.textContent = 'This content shows strong indicators of authenticity and credibility.';
+      } else if (verdict === 'Fake') {
+        subtitleEl.textContent = 'This content shows indicators of misinformation or fabrication.';
+      } else {
+        subtitleEl.textContent = 'The analysis could not definitively determine the credibility of this content.';
+      }
+    }
+
+    // ─── Update classification heading ──────────────────────
+    const classifHeading = document.querySelector('.mb-8 h3');
+    if (classifHeading && result) {
+      if (verdict === 'Verified') {
+        classifHeading.textContent = 'Why This Content is Classified as Real';
+      } else if (verdict === 'Fake') {
+        classifHeading.textContent = 'Why This Content is Classified as Fake';
+      } else {
+        classifHeading.textContent = 'Why This Content is Inconclusive';
+      }
+    }
+
+    // ─── Update reasons list ────────────────────────────────
+    const uiReasons = result?.featuresUsed || result?.FeaturesUsed || result?.reasons;
+    if (result && uiReasons && uiReasons.length > 0) {
+      const reasonsContainer = document.querySelector('.space-y-3');
+      if (reasonsContainer) {
+        const reasonColor = verdict === 'Fake' ? '#E74C3C' : verdict === 'Verified' ? '#2ECC71' : '#F1C40F';
+        reasonsContainer.innerHTML = uiReasons.map((reason, i) => `
+            <div class="flex items-start space-x-3 p-4 bg-[#F5F7FA] rounded-lg">
+                <div class="mt-1 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background: ${reasonColor}20">
+                    <span class="text-sm font-bold" style="color: ${reasonColor}">${i + 1}</span>
+                </div>
+                <span class="text-gray-700">${reason}</span>
+            </div>
+        `).join('');
+      }
+    }
+
+    // ─── Update bottom confirmation banner ──────────────────
+    const confirmBanner = document.querySelector('.mb-8.p-4.border-l-4');
+    if (confirmBanner && result) {
+      const bannerTitle = confirmBanner.querySelector('h4');
+      const bannerText = confirmBanner.querySelector('p');
+      if (verdict === 'Fake') {
+        confirmBanner.className = 'mb-8 p-4 bg-[#E74C3C]/10 border-l-4 border-[#E74C3C] rounded';
+        if (bannerTitle) { bannerTitle.textContent = 'Misinformation Warning'; bannerTitle.style.color = '#E74C3C'; }
+        if (bannerText) bannerText.textContent = 'This content appears to contradict verified sources. Exercise extreme caution and verify with trusted news outlets.';
+      } else if (verdict === 'Inconclusive') {
+        confirmBanner.className = 'mb-8 p-4 bg-[#F1C40F]/10 border-l-4 border-[#F1C40F] rounded';
+        if (bannerTitle) { bannerTitle.textContent = 'Verification Inconclusive'; bannerTitle.style.color = '#F1C40F'; }
+        if (bannerText) bannerText.textContent = 'We could not definitively verify or refute this content. Always cross-reference with multiple trusted sources.';
+      }
+    }
+  </script>
+
+  <script src="js/api.js"></script>
+  <script>
+    // ─── Feedback Submission Logic ──────────────────────────────
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnAccurate = document.getElementById("btnAccurate");
+      const btnNotAccurate = document.getElementById("btnNotAccurate");
+
+      if (btnAccurate && btnNotAccurate && result) {
+        const analysisId = result.AnalysisId || result.analysisId || result.id;
+
+        async function handleFeedback(isAccurate, rating, comments, btnClicked, btnOther) {
+          if (!analysisId) {
+            window.showSnackbar("Analysis ID not found, cannot submit feedback.", 'error');
+            return;
+          }
+          if (!API.isLoggedIn()) {
+            window.showSnackbar("Please sign in to submit feedback.", 'warning');
+            return;
+          }
+
+          try {
+            btnClicked.disabled = true;
+            btnOther.disabled = true;
+            await API.submitFeedback("News", analysisId, rating, isAccurate, comments);
+
+            if (isAccurate) {
+              btnClicked.classList.replace("bg-gray-100", "bg-[#2ECC71]");
+              btnClicked.classList.replace("text-gray-700", "text-white");
+            } else {
+              btnClicked.classList.replace("bg-gray-100", "bg-[#E74C3C]");
+              btnClicked.classList.replace("text-gray-700", "text-white");
+            }
+
+            window.showSnackbar("Thank you for your feedback!", 'success');
+          } catch (e) {
+            btnClicked.disabled = false;
+            btnOther.disabled = false;
+            window.showSnackbar("Failed to submit feedback: " + (e.message || 'Unknown error'), 'error');
+          }
+        }
+
+        btnAccurate.addEventListener("click", () => handleFeedback(true, 5, "I agree with the result.", btnAccurate, btnNotAccurate));
+        btnNotAccurate.addEventListener("click", () => handleFeedback(false, 1, "I disagree with the result.", btnNotAccurate, btnAccurate));
+      }
+    });
+  </script>
+
+  <script>
+    const analyzedContentElement = document.getElementById('analyzedContent');
+    if (savedNewsContent && analyzedContentElement) {
+      analyzedContentElement.textContent = savedNewsContent;
+    } else if (analyzedContentElement) {
+      analyzedContentElement.textContent = 'No analyzed content available.';
+    }
+  </script>
+
+
+
+
+
+  <script>
+    // جلب بيانات المستخدم
+    const username = localStorage.getItem("username");
+    const email = localStorage.getItem("email");
+
+    // Security Check: Redirect to home if not logged in
+    if (!username && !email) {
+      window.location.href = "TruthLens.html";
+    }
+
+    // عناصر الشريط
+    const navbarUser = document.getElementById("navbar");
+    const guestHeader = document.getElementById("guestHeader");
+    const helloUser = document.getElementById("helloUser");
+    const signOutBtn = document.getElementById("signOutBtn");
+
+    // دالة لإظهار الاسم قبل @ لو Email
+    function getDisplayName() {
+      if (username && username !== "undefined" && username !== "null") return username;
+      if (email && email !== "undefined" && email !== "null") return email.split("@")[0];
+      return "User";
+    }
+
+    // التحكم في ظهور الشريطين
+    if (username || email) {
+      // مستخدم مسجل → إظهار شريط المستخدم + إخفاء شريط الضيف
+      navbarUser.classList.remove("hidden");
+      guestHeader.classList.add("hidden");
+
+      helloUser.textContent = "Hello, " + getDisplayName();
+      helloUser.classList.remove("hidden");
+      signOutBtn.classList.remove("hidden");
+    } else {
+      // لا يوجد تسجيل دخول → إظهار شريط الضيف + إخفاء شريط المستخدم
+      navbarUser.classList.add("hidden");
+      guestHeader.classList.remove("hidden");
+    }
+
+    // Sign Out
+    signOutBtn.addEventListener("click", () => {
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("authType"); // لو موجود
+
+      navbarUser.classList.add("hidden");
+      guestHeader.classList.remove("hidden");
+
+      window.location.href = "TruthLens.html"; // الرجوع للصفحة الرئيسية
+    });
+  </script>
+
+
+
+
+
+
+
+
+  <script>
+    let count = parseInt(localStorage.getItem("fakeNewsScans")) || 0;
+    localStorage.setItem("fakeNewsScans", count + 1);
+  </script>
+
+  <script>
+
+    let detected = parseInt(localStorage.getItem("fakeNewsDetected")) || 0;
+    localStorage.setItem("fakeNewsDetected", detected + 1);
+
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

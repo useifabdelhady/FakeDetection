@@ -1,0 +1,128 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Edit Profile — TruthLens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Edit your TruthLens profile settings.">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%230A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>'>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F5F7FA; min-height: 100vh; }
+
+      .ep-header { background: #fff; border-bottom: 1px solid #E5E7EB; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+      .ep-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+      .ep-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #0A2540; font-size: 20px; font-weight: 700; }
+      .ep-nav { display: flex; align-items: center; gap: 24px; }
+      .ep-nav a { color: #0A2540; text-decoration: none; font-size: 14px; transition: opacity .2s; }
+      .ep-nav a:hover { opacity: .7; }
+
+      .ep-container { max-width: 520px; margin: 60px auto; padding: 0 20px; }
+      .ep-back { display: inline-flex; align-items: center; gap: 6px; color: #0A2540; text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 24px; transition: opacity .2s; }
+      .ep-back:hover { opacity: .7; }
+
+      .ep-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,.08); padding: 40px; }
+      .ep-card h1 { font-size: 24px; font-weight: 700; color: #0A2540; margin-bottom: 8px; }
+      .ep-card p.subtitle { font-size: 14px; color: #6B7280; margin-bottom: 32px; }
+
+      .ep-field { margin-bottom: 24px; }
+      .ep-field label { display: block; font-size: 13px; font-weight: 600; color: #0A2540; margin-bottom: 8px; }
+      .ep-field input { width: 100%; padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 15px; color: #0A2540; background: #F9FAFB; outline: none; transition: border-color .2s, box-shadow .2s; }
+      .ep-field input:focus { border-color: #0A2540; box-shadow: 0 0 0 3px rgba(10,37,64,.1); background: #fff; }
+
+      .ep-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 32px; }
+      .ep-btn { padding: 12px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all .2s; }
+      .ep-btn-cancel { background: transparent; color: #6B7280; border: 2px solid #E5E7EB; }
+      .ep-btn-cancel:hover { background: #F5F7FA; }
+      .ep-btn-save { background: #0A2540; color: #fff; }
+      .ep-btn-save:hover { background: #0A2540dd; }
+      .ep-btn-save:disabled { opacity: .6; cursor: not-allowed; }
+
+      .ep-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0A2540, #0A2540cc); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 700; margin: 0 auto 24px; }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="ep-header">
+  <div class="ep-header-inner">
+    <a class="ep-logo" href="Truthlens.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      TruthLens
+    </a>
+    <nav class="ep-nav">
+      <a href="services.html">Services</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="ep-container">
+  <a href="profile.html" class="ep-back">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    Back to Profile
+  </a>
+
+  <div class="ep-card">
+    <div class="ep-avatar" id="avatarInitial">U</div>
+    <h1>Edit Profile</h1>
+    <p class="subtitle">Update your display name below.</p>
+
+    <div class="ep-field">
+      <label for="editUsername">Username</label>
+      <input type="text" id="editUsername" placeholder="Enter new username" autocomplete="off">
+    </div>
+
+    <div class="ep-field">
+      <label>Email</label>
+      <input type="email" id="editEmail" disabled style="opacity:.6; cursor:not-allowed;">
+    </div>
+
+    <div class="ep-actions">
+      <button class="ep-btn ep-btn-cancel" onclick="window.location.href='profile.html'">Cancel</button>
+      <button class="ep-btn ep-btn-save" id="saveBtn">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script>
+  (async function() {
+    if (!API.isLoggedIn()) { window.location.href = "sign_in.html"; return; }
+
+    // Load current profile data
+    try {
+      const profile = await API.getProfile();
+      const name = profile.username || (profile.email ? profile.email.split('@')[0] : "User");
+      document.getElementById('editUsername').value = name;
+      document.getElementById('editEmail').value = profile.email || "";
+      document.getElementById('avatarInitial').textContent = name.charAt(0).toUpperCase();
+    } catch (e) {
+      console.error("Failed to load profile:", e);
+    }
+
+    // Save handler
+    document.getElementById('saveBtn').addEventListener('click', async () => {
+      const un = document.getElementById('editUsername').value.trim();
+      if (!un) return window.showSnackbar("Username cannot be empty", "warning");
+
+      const btn = document.getElementById('saveBtn');
+      btn.textContent = 'Saving...';
+      btn.disabled = true;
+
+      try {
+        await API.updateProfile(un);
+        localStorage.setItem("username", un);
+        window.showSnackbar("Profile updated successfully!", "success");
+        setTimeout(() => window.location.href = 'profile.html', 1200);
+      } catch (e) {
+        window.showSnackbar("Failed to update: " + (e.message || "Unknown error"), "error");
+      }
+      btn.textContent = 'Save Changes';
+      btn.disabled = false;
+    });
+  })();
+</script>
+
+</body></html>
