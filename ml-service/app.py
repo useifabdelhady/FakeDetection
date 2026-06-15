@@ -68,6 +68,18 @@ MODELS_DIR = os.path.join(BASE_DIR, "ml-models")
 # Add ml-source to Python path so we can import phishing modules
 sys.path.insert(0, ML_SOURCE_DIR)
 
+# ─── Fix Pickle Deserialization for SoftVotingEnsemble ────────────────────────
+# The model was trained/saved in phishing_detection_clean.py, so joblib expects
+# to find the class at `phishing_detection_clean.SoftVotingEnsemble`.
+# We inject it into all possible module locations so deserialization always works.
+import importlib
+try:
+    pdc = importlib.import_module("phishing_detection_clean")
+    pdc.SoftVotingEnsemble = SoftVotingEnsemble
+except ImportError:
+    pass
+sys.modules['__main__'].SoftVotingEnsemble = SoftVotingEnsemble
+
 # ─── FastAPI App ──────────────────────────────────────────────────────────────
 app = FastAPI(
     title="TruthLens ML Service",

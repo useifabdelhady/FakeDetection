@@ -1,0 +1,18 @@
+# Docker ignore for ML service build
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+Notebooks
+Data
+backend
+frontend
+*.pdf
+*.md
+ml-service/.dockerignore
+ml-service/Dockerfile
+Dockerfile.ml
+Dockerfile.backend
+.gemini

@@ -1,0 +1,29 @@
+# ============================================================
+# TruthLens .NET Backend — Dockerfile for Azure App Service
+# ============================================================
+# Build:  docker build -f Dockerfile.backend -t truthlens-backend .
+# Run:    docker run -p 8080:8080 truthlens-backend
+# ============================================================
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+# Copy project file and restore dependencies (cached layer)
+COPY backend/FakeNewsDetectionPlatform.csproj ./
+RUN dotnet restore
+
+# Copy all source and publish
+COPY backend/ ./
+RUN dotnet publish -c Release -o /app/publish
+
+# ── Runtime image ──
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Azure App Service uses port 8080 by default
+ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_ENVIRONMENT=Production
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "FakeNewsDetectionPlatform.dll"]

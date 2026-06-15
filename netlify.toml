@@ -1,0 +1,22 @@
+# ============================================================
+# Netlify Configuration for TruthLens Frontend
+# ============================================================
+
+[build]
+  # The frontend is plain HTML/CSS/JS — no build step needed
+  publish = "frontend/"
+
+# ─── Redirect rules ──────────────────────────────────────────
+# SPA-style: serve index page for all routes
+[[redirects]]
+  from = "/*"
+  to = "/Truthlens.html"
+  status = 200
+
+# ─── Security Headers ────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
