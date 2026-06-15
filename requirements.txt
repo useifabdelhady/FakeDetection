@@ -1,14 +1,25 @@
-# Data Manipulation & Math
-pandas
-numpy
+# ================================================
+# TruthLens — Python Dependencies (ML Service)
+# ================================================
+# Install: pip install -r requirements.txt
 
-# Machine Learning & Optimization
+# --- Core ---
+numpy
+pandas
+
+# --- Machine Learning (Website Phishing Model) ---
 scikit-learn
 xgboost
-shap
-optuna
+joblib
 
-# Feature Extraction & Web Scraping
+# --- Deep Learning (Fake News Model) ---
+torch
+transformers
+peft
+accelerate
+sentencepiece
+
+# --- Feature Extraction & Web Analysis ---
 requests
 beautifulsoup4
 tldextract
@@ -16,23 +27,11 @@ python-whois
 dnspython
 jellyfish
 rapidfuzz
-pyarrow
 
-# Visualization
-matplotlib
-seaborn
-
-# Development & Integration
+# --- FastAPI ML Service ---
 fastapi
-uvicorn
-redis
-joblib
-tqdm
+uvicorn[standard]
+pydantic
+
+# --- Utilities ---
 python-dotenv
-datasets
-retrying
-transformers
-torch
-accelerate
-sentencepiece
-wandb
