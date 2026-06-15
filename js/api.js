@@ -9,7 +9,7 @@ const API = (() => {
   const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
   // ⚠️ DEPLOYMENT: Replace these with your actual deployed URLs
-  const PRODUCTION_BASE_URL = "https://truthlens-api-h9hsbjg0chhgbcaw.switzerlandnorth-01.azurewebsites.net/api";
+  const PRODUCTION_BASE_URL = "https://truthlens-api.azurewebsites.net/api";
   const PRODUCTION_ML_URL   = "https://useifabdelhady-truthlens-ml.hf.space";
 
   const BASE_URL = isLocal ? "http://localhost:5159/api"  : PRODUCTION_BASE_URL;
