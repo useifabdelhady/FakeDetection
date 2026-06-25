@@ -95,6 +95,7 @@ const API = (() => {
   }
 
   async function register(username, email, password, confirmPassword) {
+    clearUserInfo(); // Clear any previous user's data
     const data = await request("POST", `${BASE_URL}/Auth/register`, {
       Username: username, Email: email, Password: password, ConfirmPassword: confirmPassword
     }, false);
