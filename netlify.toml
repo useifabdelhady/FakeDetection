@@ -7,11 +7,11 @@
   publish = "frontend/"
 
 # ─── Redirect rules ──────────────────────────────────────────
-# SPA-style: serve index page for all routes
+# 404 fallback: only serve Truthlens.html for routes that don't match a real file
 [[redirects]]
   from = "/*"
   to = "/Truthlens.html"
-  status = 200
+  status = 404
 
 # ─── Security Headers ────────────────────────────────────────
 [[headers]]
