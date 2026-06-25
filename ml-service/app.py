@@ -32,6 +32,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import dotenv
+from rapidfuzz import fuzz
 
 # Load environment variables from .env file
 dotenv.load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
@@ -202,7 +203,7 @@ DOMAIN_CREDIBILITY = {
 }
 
 MIN_EVIDENCE_QUALITY = 0.25          # Drop snippets below this threshold
-MAX_QUALITY_SNIPPETS  = 5            # Keep only the best N after scoring
+MAX_QUALITY_SNIPPETS  = 8            # Keep only the best N after scoring
 
 
 def _extract_domain(url_str: str) -> str:
@@ -238,7 +239,7 @@ def _score_domain(domain: str) -> float:
     return 0.5
 
 
-def get_serper_evidence(claim: str, api_key: str, max_results: int = 8) -> dict:
+def get_serper_evidence(claim: str, api_key: str, max_results: int = 30) -> dict:
     """Search Google via Serper.dev and return quality-scored evidence.
 
     Returns
@@ -279,14 +280,28 @@ def get_serper_evidence(claim: str, api_key: str, max_results: int = 8) -> dict:
             raw.append((kg_desc, "wikipedia.org", 1.0))  # KG is usually Wikipedia
 
         # Organic search snippets
+        fact_check_keywords = ["fact check", "debunked", "hoax", "false", "misleading", "true", "fake"]
         for res in results.get("organic", [])[:max_results]:
             snippet = res.get("snippet", "").strip()
             link    = res.get("link", "")
             if snippet and snippet not in seen and len(snippet) > 20:
                 seen.add(snippet)
                 domain = _extract_domain(link)
-                score  = _score_domain(domain)
-                raw.append((snippet, domain, score))
+                base_score  = _score_domain(domain)
+                
+                # Fact-Check Keyword Boost
+                lower_snip = snippet.lower()
+                fact_check_boost = 0.0
+                if any(kw in lower_snip for kw in fact_check_keywords):
+                    fact_check_boost = 0.3
+                
+                # Relevance Score using rapidfuzz
+                relevance = fuzz.token_set_ratio(claim.lower(), lower_snip) / 100.0
+                
+                # Final Score
+                final_score = (relevance + fact_check_boost) * base_score
+                
+                raw.append((snippet, domain, final_score))
 
         # Filter out low-quality sources and keep top N by score
         raw = [(s, d, q) for s, d, q in raw if q >= MIN_EVIDENCE_QUALITY]
