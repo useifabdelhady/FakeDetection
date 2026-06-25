@@ -1,4 +1,4 @@
-﻿<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
+<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
 
 </style>
     <meta charset="utf-8">
@@ -49,7 +49,7 @@
           <header  id="guestHeader" class="bg-white shadow-sm border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="flex justify-between items-center h-16">
-                <a class="flex items-center space-x-2" href="Truthlens.html" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-8 w-8 text-[#0A2540]"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg><span class="text-xl font-bold text-[#0A2540]">TruthLens</span></a><nav class="hidden md:flex items-center space-x-8"><a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="services.html" data-discover="true">Services</a></nav><div class="flex items-center space-x-4"><a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="sign_in.html" data-discover="true">Sign In</a><a class="px-4 py-2 rounded-lg bg-[#0A2540] text-white hover:bg-[#0A2540]/90 transition-colors" href="sign_up.html" data-discover="true">Sign Up</a></div></div></div></header><div class="min-h-screen bg-[#F5F7FA] py-12"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a class="flex items-center space-x-2" href="TruthLens.html" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-8 w-8 text-[#0A2540]"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg><span class="text-xl font-bold text-[#0A2540]">TruthLens</span></a><nav class="hidden md:flex items-center space-x-8"><a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="services.html" data-discover="true">Services</a></nav><div class="flex items-center space-x-4"><a class="text-[#0A2540] hover:text-[#0A2540]/80 transition-colors" href="sign_in.html" data-discover="true">Sign In</a><a class="px-4 py-2 rounded-lg bg-[#0A2540] text-white hover:bg-[#0A2540]/90 transition-colors" href="sign_up.html" data-discover="true">Sign Up</a></div></div></div></header><div class="min-h-screen bg-[#F5F7FA] py-12"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                   <button class="flex items-center space-x-2 text-[#0A2540] hover:text-[#0A2540]/80 mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-5 w-5"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg><a  href="website scam detection.html">Back to Scanner</a></button><div class="bg-white rounded-2xl shadow-lg p-8">
                     <div class="flex flex-col items-center mb-8">
                       <div class="relative w-48 h-48 mb-6">
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     indicators.push({
                         label: "Detection Signal",
                         desc: s,
-                        value: isSafe ? "✓ Good" : "⚠ Alert",
+                        value: isSafe ? "? Good" : "? Alert",
                         safe: isSafe
                     });
                 });
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
             indicatorsContainer.innerHTML = indicatorHTML;
         }
 
-        // ─── Update detailed reasons list ───
+        // --- Update detailed reasons list ---
         const uiReasons = result?.reasons || result?.Reasons;
         if (uiReasons && uiReasons.length > 0) {
             const reasonsContainer = document.getElementById('reasonsContainer');

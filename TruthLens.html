@@ -1,4 +1,4 @@
-﻿ <html lang="en">
+ <html lang="en">
 <head><style>body {transition: opacity ease-in 0.2s; } 
 
 </style>
@@ -162,29 +162,29 @@
 
 
 <script>
-// جلب بيانات المستخدم
+// ??? ?????? ????????
 const username = localStorage.getItem("username");
 const email = localStorage.getItem("email");
 
-// عناصر الشريط
+// ????? ??????
 const navbarUser = document.getElementById("navbar");
 const guestHeader = document.getElementById("guestHeader");
 const helloUser = document.getElementById("helloUser");
 const signOutBtn = document.getElementById("signOutBtn");
 
-// دالة لإظهار الاسم قبل @ لو Email
+// ???? ?????? ????? ??? @ ?? Email
 function getDisplayName() {
   if (username) return username;
   if (email) return email.split("@")[0];
   return null;
 }
 
-// عناصر أخرى
+// ????? ????
 const getStartedSection = document.getElementById("getStartedSection");
 
-// التحكم في ظهور الشريطين
+// ?????? ?? ???? ????????
 if (username || email) {
-  // مستخدم مسجل → إظهار شريط المستخدم + إخفاء شريط الضيف
+  // ?????? ???? ? ????? ???? ???????? + ????? ???? ?????
   navbarUser.classList.remove("hidden");
   guestHeader.classList.add("hidden");
   if (getStartedSection) getStartedSection.classList.add("hidden");
@@ -193,7 +193,7 @@ if (username || email) {
   helloUser.classList.remove("hidden");
   signOutBtn.classList.remove("hidden");
 } else {
-  // لا يوجد تسجيل دخول → إظهار شريط الضيف + إخفاء شريط المستخدم
+  // ?? ???? ????? ???? ? ????? ???? ????? + ????? ???? ????????
   navbarUser.classList.add("hidden");
   guestHeader.classList.remove("hidden");
   if (getStartedSection) getStartedSection.classList.remove("hidden");
@@ -203,12 +203,12 @@ if (username || email) {
 signOutBtn.addEventListener("click", () => {
   localStorage.removeItem("username");
   localStorage.removeItem("email");
-  localStorage.removeItem("authType"); // لو موجود
+  localStorage.removeItem("authType"); // ?? ?????
 
   navbarUser.classList.add("hidden");
   guestHeader.classList.remove("hidden");
 
-  window.location.href = "TruthLens.html"; // الرجوع للصفحة الرئيسية
+  window.location.href = "TruthLens.html"; // ?????? ?????? ????????
 });
 </script>
 
