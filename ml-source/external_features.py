@@ -118,38 +118,26 @@ def get_domain_age(url: str) -> float:
         except Exception as e:
             logger.debug(f"Primary WHOIS module failed: {e}")
             
-        # Method 2: Pure python socket fallback for common TLDs
+        # Method 2: RDAP HTTP Fallback (Works on HuggingFace Spaces port 443)
         if not creation_date:
             try:
-                import socket, re
+                # Use Verisign for .com/.net as it's most reliable, else use RDAP.org
                 tld = domain.split('.')[-1].lower()
-                whois_server = None
-                if tld in ['com', 'net']: whois_server = 'whois.verisign-grs.com'
-                elif tld == 'org': whois_server = 'whois.pir.org'
-                elif tld == 'io': whois_server = 'whois.nic.io'
-                elif tld == 'co': whois_server = 'whois.nic.co'
-                elif tld == 'us': whois_server = 'whois.nic.us'
+                rdap_url = f"https://rdap.verisign.com/com/v1/domain/{domain}" if tld in ['com', 'net'] else f"https://rdap.org/domain/{domain}"
                 
-                if whois_server:
-                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    s.settimeout(3)
-                    s.connect((whois_server, 43))
-                    s.send((domain + '\r\n').encode())
-                    res = b''
-                    while True:
-                        d = s.recv(4096)
-                        if not d: break
-                        res += d
-                    text = res.decode(errors='ignore')
-                    
-                    # Parse creation date
-                    match = re.search(r'(?i)(Creation Date|Created On|Registration Time).*?:(.*?)\n', text)
-                    if match:
-                        date_str = match.group(2).strip()
-                        from dateutil import parser
-                        creation_date = parser.parse(date_str, fuzzy=True)
+                resp = requests.get(rdap_url, timeout=5)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    events = data.get('events', [])
+                    for e in events:
+                        if e.get('eventAction', '').lower() == 'registration':
+                            date_str = e.get('eventDate')
+                            if date_str:
+                                from dateutil import parser
+                                creation_date = parser.parse(date_str, fuzzy=True)
+                                break
             except Exception as e:
-                logger.debug(f"Socket WHOIS fallback failed: {e}")
+                logger.debug(f"RDAP WHOIS fallback failed: {e}")
                 
         # Final Date processing
         if isinstance(creation_date, list):

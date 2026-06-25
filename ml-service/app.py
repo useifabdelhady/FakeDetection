@@ -295,12 +295,8 @@ def get_serper_evidence(claim: str, api_key: str, max_results: int = 30) -> dict
                 if any(kw in lower_snip for kw in fact_check_keywords):
                     fact_check_boost = 0.3
                 
-                # Relevance Score using rapidfuzz
-                relevance = fuzz.token_set_ratio(claim.lower(), lower_snip) / 100.0
-                
-                # Final Score
-                final_score = (relevance + fact_check_boost) * base_score
-                
+                # Relevance Score based purely on Domain Credibility & Fact-Check Boost
+                final_score = base_score + fact_check_boost
                 raw.append((snippet, domain, final_score))
 
         # Filter out low-quality sources and keep top N by score
