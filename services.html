@@ -1,4 +1,4 @@
-<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
+﻿<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
 
 </style>
     <meta charset="utf-8">
@@ -79,7 +79,7 @@
                     </svg>
                   </div>
                 </a>
-                <a class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 group" href="website scam detection.html" data-discover="true"><div class="bg-[#F1C40F]/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#F1C40F]/20 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-8 w-8 text-[#F1C40F]"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div><h2 class="text-2xl font-bold mb-4 text-[#0A2540]">Website Scam Detection</h2><p class="text-gray-600 mb-6">Check websites for phishing attempts, malicious content, and scam indicators. Get detailed security reports including domain age, SSL status, and suspicious patterns.</p><div class="flex items-center text-[#F1C40F] font-medium group-hover:translate-x-2 transition-transform"><span>Scan Website</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-5 w-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a></div></div></div></div></div></div></div></div>
+                <a class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 group" href="website Scam detection.html" data-discover="true"><div class="bg-[#F1C40F]/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#F1C40F]/20 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-8 w-8 text-[#F1C40F]"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div><h2 class="text-2xl font-bold mb-4 text-[#0A2540]">Website Scam Detection</h2><p class="text-gray-600 mb-6">Check websites for phishing attempts, malicious content, and scam indicators. Get detailed security reports including domain age, SSL status, and suspicious patterns.</p><div class="flex items-center text-[#F1C40F] font-medium group-hover:translate-x-2 transition-transform"><span>Scan Website</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-5 w-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a></div></div></div></div></div></div></div></div>
     
 
      <noscript data-nosnippet="">
@@ -98,26 +98,26 @@
   
 
 <script>
-// ??? ?????? ????????
+// جلب بيانات المستخدم
 const username = localStorage.getItem("username");
 const email = localStorage.getItem("email");
 
-// ????? ??????
+// عناصر الشريط
 const navbarUser = document.getElementById("navbar");
 const guestHeader = document.getElementById("guestHeader");
 const helloUser = document.getElementById("helloUser");
 const signOutBtn = document.getElementById("signOutBtn");
 
-// ???? ?????? ????? ??? @ ?? Email
+// دالة لإظهار الاسم قبل @ لو Email
 function getDisplayName() {
   if (username) return username;
   if (email) return email.split("@")[0];
   return null;
 }
 
-// ?????? ?? ???? ????????
+// التحكم في ظهور الشريطين
 if (username || email) {
-  // ?????? ???? ? ????? ???? ???????? + ????? ???? ?????
+  // مستخدم مسجل → إظهار شريط المستخدم + إخفاء شريط الضيف
   navbarUser.classList.remove("hidden");
   guestHeader.classList.add("hidden");
 
@@ -125,7 +125,7 @@ if (username || email) {
   helloUser.classList.remove("hidden");
   signOutBtn.classList.remove("hidden");
 } else {
-  // ?? ???? ????? ???? ? ????? ???? ????? + ????? ???? ????????
+  // لا يوجد تسجيل دخول → إظهار شريط الضيف + إخفاء شريط المستخدم
   navbarUser.classList.add("hidden");
   guestHeader.classList.remove("hidden");
 }
@@ -134,12 +134,12 @@ if (username || email) {
 signOutBtn.addEventListener("click", () => {
   localStorage.removeItem("username");
   localStorage.removeItem("email");
-  localStorage.removeItem("authType"); // ?? ?????
+  localStorage.removeItem("authType"); // لو موجود
 
   navbarUser.classList.add("hidden");
   guestHeader.classList.remove("hidden");
 
-  window.location.href = "TruthLens.html"; // ?????? ?????? ????????
+  window.location.href = "TruthLens.html"; // الرجوع للصفحة الرئيسية
 });
 </script>
 

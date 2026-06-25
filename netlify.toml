@@ -10,7 +10,7 @@
 # 404 fallback: only serve Truthlens.html for routes that don't match a real file
 [[redirects]]
   from = "/*"
-  to = "/Truthlens.html"
+  to = "/TruthLens.html"
   status = 404
 
 # ─── Security Headers ────────────────────────────────────────
