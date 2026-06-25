@@ -188,16 +188,16 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.id = 'scanOverlay';
         overlay.style.cssText = 'position:fixed;inset:0;background:rgba(10,37,64,0.85);backdrop-filter:blur(6px);z-index:9999;display:flex;align-items:center;justify-content:center;animation:ovFadeIn 0.3s ease;';
         const scanSteps = deepScan ? [
-            {icon:'??', text:'Resolving URL shorteners...'},
-            {icon:'??', text:'Checking security headers...'},
-            {icon:'??', text:'Analyzing SSL & WHOIS records...'},
-            {icon:'??', text:'Running XGBoost engine...'},
-            {icon:'?', text:'Finalizing security posture...'}
+            {icon:'•', text:'Resolving URL shorteners...'},
+            {icon:'•', text:'Checking security headers...'},
+            {icon:'•', text:'Analyzing SSL & WHOIS records...'},
+            {icon:'•', text:'Running XGBoost engine...'},
+            {icon:'•', text:'Finalizing security posture...'}
         ] : [
-            {icon:'??', text:'Resolving URL shorteners...'},
-            {icon:'??', text:'Extracting domain features...'},
-            {icon:'??', text:'Running XGBoost engine...'},
-            {icon:'?', text:'Finalizing security posture...'}
+            {icon:'•', text:'Resolving URL shorteners...'},
+            {icon:'•', text:'Extracting domain features...'},
+            {icon:'•', text:'Running XGBoost engine...'},
+            {icon:'•', text:'Finalizing security posture...'}
         ];
         overlay.innerHTML = `
           <style>
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const stepEls = overlay.querySelectorAll('.scan-step');
         const progBar = document.getElementById('scanProg');
         let sIdx = 0;
-        const doneMark = '?';
+        const doneMark = '✓';
 
         function advanceScan(finalizing = false) {
           if (sIdx > 0 && stepEls[sIdx-1]) { 
