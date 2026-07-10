@@ -414,9 +414,14 @@ def predict_news(claim: str, api_key: str) -> dict:
 
     logger.info(f"DEBUG [News]: Probs: verified={prob_verified:.4f}, neutral={prob_neutral:.4f}, fake={prob_fake:.4f}")
 
-    # Step 4: Verdict — simple argmax (model is well-calibrated from training)
-    max_idx = probs.index(max(probs))
-    if max_idx == 0:
+    # Step 4: Verdict — argmax with confidence threshold (model must be > 60% sure)
+    max_prob = max(probs)
+    max_idx = probs.index(max_prob)
+    
+    if max_prob < 0.60:
+        verdict = "Inconclusive"
+        credibility = 50 + (prob_verified - prob_fake) * 50
+    elif max_idx == 0:
         verdict = "Verified"
         credibility = prob_verified * 100
     elif max_idx == 2:
