@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Add default ML score indicator if nothing else
             if (indicators.length === 0) {
                 const safeScorePercent = 100 - riskPercentage;
-                indicators.push({ label: "ML Model Score", desc: "XGBoost ensemble prediction", value: `${safeScorePercent}% safe`, safe: safeScorePercent > 60 });
+                indicators.push({ label: "ML Model Score", desc: "AI Threat Prediction", value: `${safeScorePercent}% safe`, safe: safeScorePercent > 60 });
             }
             
             indicators.forEach(ind => {
